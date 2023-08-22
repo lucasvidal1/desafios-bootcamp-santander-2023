@@ -19,13 +19,12 @@ public class User {
     @OneToOne(cascade = CascadeType.ALL)
     private Card card;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Feature> features;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<News> news;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     public Long getId() {
         return id;
     }
